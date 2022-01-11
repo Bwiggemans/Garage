@@ -47,17 +47,20 @@ public class CarModelController {
     public List<String> getCarModels() {
         return carModels;
     }
+
     @GetMapping(value = "/carmodels/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String getCarModel(@PathVariable int id) {
         return carModels.get(id);
     }
+
     @DeleteMapping(value = "/carmodels/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public String deleteCarModel(@PathVariable int id){
         carModels.remove(id);
         return "Deleted!";
     }
+
     @PostMapping(value = "/carmodels")
     @ResponseStatus(HttpStatus.CREATED)
     public String addCarModel(@RequestBody String carmodel){

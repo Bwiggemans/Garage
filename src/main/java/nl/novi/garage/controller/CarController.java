@@ -1,9 +1,9 @@
 package nl.novi.garage.controller;
 
 import nl.novi.garage.model.Car;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +46,56 @@ public class CarController {
     }
     @GetMapping(value = "/cars")
     public ResponseEntity<Object> getCars(){
-        return ResponseEntity.ok(cars);
+        return ResponseEntity.ok(cars); // Jackson zorgt ervoor object => json
+    }
+
+    @GetMapping(value = "/cars/{id}")
+    public ResponseEntity<Object> getCar(@PathVariable int id){
+        return ResponseEntity.ok(cars.get(id)); // Jackson zorgt ervoor object => json
+    }
+
+    @DeleteMapping(value = "/cars/{id}")
+    public ResponseEntity<Object> deleteCar(@PathVariable int id){
+        cars.remove(id);
+        return ResponseEntity.noContent().build(); // De header builder heeft een body nodig om te kunnen functioneren
+                                                    // 200 code wordt teruggegeven
+    }
+
+    @PostMapping(value = "/cars")
+    public ResponseEntity<Object> addCar(@RequestBody Car car){
+        cars.add(car);
+        return ResponseEntity.created(null).build(); // 200 code wordt teruggegeven
+    }
+
+    @PutMapping(value = "/cars/{id}")
+    public ResponseEntity<Object> updateCar(@PathVariable int id, @RequestBody Car car){
+        cars.set(id, car);
+        return ResponseEntity.created(null).build(); // 200 code wordt teruggegeven
+    }
+
+    @PatchMapping(value = "/cars/{id}")
+    public ResponseEntity<Object> partialUpdateCar(@PathVariable int id, @RequestBody Car car){
+        Car existingCar = cars.get(id);
+        if (!car.getBrand().isEmpty()){
+            existingCar.setBrand(car.getBrand());
+        }
+        if (!car.getModel().isEmpty()){
+            existingCar.setModel(car.getModel());
+        }
+        if (!car.getFuel().isEmpty()){
+            existingCar.setFuel(car.getFuel());
+        }
+        if (!car.getTransmission().isEmpty()){
+            existingCar.setTransmission(car.getTransmission());
+        }
+        if ((car.getYear()) != (existingCar.getYear())){
+            existingCar.setYear(car.getYear());
+        }
+        if ((car.getMileage()) != (existingCar.getMileage())){
+            existingCar.setMileage(car.getMileage());
+        }
+        cars.set(id, existingCar);
+        return ResponseEntity.created(null).build(); // 200 code wordt teruggegeven
     }
 
 }
