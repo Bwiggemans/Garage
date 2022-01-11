@@ -82,16 +82,16 @@ public class CarController {
     @PatchMapping(value = "/cars/{id}")
     public ResponseEntity<Object> partialUpdateCar(@PathVariable int id, @RequestBody Car car){
         Car existingCar = cars.get(id);
-        if (!car.getBrand().isEmpty()){
+        if (!(car.getBrand()==null) && !car.getBrand().isEmpty()){
             existingCar.setBrand(car.getBrand());
         }
-        if (!car.getModel().isEmpty()){
+        if (!(car.getModel()==null) && !car.getModel().isEmpty()){
             existingCar.setModel(car.getModel());
         }
-        if (!car.getFuel().isEmpty()){
+        if (!(car.getFuel()==null) && !car.getFuel().isEmpty()){
             existingCar.setFuel(car.getFuel());
         }
-        if (!car.getTransmission().isEmpty()){
+        if (!(car.getTransmission()==null) && !car.getTransmission().isEmpty()){
             existingCar.setTransmission(car.getTransmission());
         }
         if ((car.getYear()) != (existingCar.getYear())){
