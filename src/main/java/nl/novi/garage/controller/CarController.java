@@ -1,6 +1,8 @@
 package nl.novi.garage.controller;
 
 import nl.novi.garage.model.Car;
+import nl.novi.garage.repository.CarRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -46,27 +48,34 @@ public class CarController {
         cars.add(car3);
 
     }
+
+    @Autowired
+    private CarRepository carRepository;
+
     @GetMapping(value = "/cars")
     public ResponseEntity<Object> getCars(){
-        return ResponseEntity.ok(cars); // Jackson zorgt ervoor object => json
+        return ResponseEntity.ok(carRepository.findAll()); // Jackson zorgt ervoor object => json
     }
 
     @GetMapping(value = "/cars/{id}")
     public ResponseEntity<Object> getCar(@PathVariable int id){
-        return ResponseEntity.ok(cars.get(id)); // Jackson zorgt ervoor object => json
+        return ResponseEntity.ok(carRepository.findById(id)); // Jackson zorgt ervoor object => json
     }
 
     @DeleteMapping(value = "/cars/{id}")
     public ResponseEntity<Object> deleteCar(@PathVariable int id){
-        cars.remove(id);
+//      cars.remove(id);
+        carRepository.deleteById(id);
         return ResponseEntity.noContent().build(); // De header builder heeft een body nodig om te kunnen functioneren
                                                     // 200 code wordt teruggegeven
     }
 
     @PostMapping(value = "/cars")
     public ResponseEntity<Object> addCar(@RequestBody Car car){
-        cars.add(car);
-        int newId = cars.size() - 1;
+//        cars.add(car);
+//        int newId = cars.size() - 1;
+        Car newCar = carRepository.save(car);
+        int newId = car.getId();
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newId).toUri();
 
@@ -75,13 +84,37 @@ public class CarController {
 
     @PutMapping(value = "/cars/{id}")
     public ResponseEntity<Object> updateCar(@PathVariable int id, @RequestBody Car car){
-        cars.set(id, car);
+//        cars.set(id, car);
+        Car storeCar = carRepository.findById(id).orElse(null);
+
+        if (!car.getBrand().isEmpty()) {
+            storeCar.setBrand(car.getBrand());
+        }
+        if (!car.getModel().isEmpty()) {
+            storeCar.setModel(car.getModel());
+        }
+        if (!car.getFuel().isEmpty()) {
+            storeCar.setFuel(car.getFuel());
+        }
+        if (!car.getTransmission().isEmpty()) {
+            storeCar.setTransmission(car.getTransmission());
+        }
+        if ((car.getYear()) != (storeCar.getYear())){
+            storeCar.setYear(car.getYear());
+        }
+        if ((car.getMileage()) != (storeCar.getMileage())){
+            storeCar.setMileage(car.getMileage());
+        }
+        carRepository.save(storeCar);
+
         return ResponseEntity.noContent().build(); // 200 code wordt teruggegeven
     }
 
     @PatchMapping(value = "/cars/{id}")
     public ResponseEntity<Object> partialUpdateCar(@PathVariable int id, @RequestBody Car car){
-        Car existingCar = cars.get(id);
+//        Car existingCar = cars.get(id);
+        Car existingCar = carRepository.findById(id).orElse(null);
+
         if (!(car.getBrand()==null) && !car.getBrand().isEmpty()){
             existingCar.setBrand(car.getBrand());
         }
@@ -100,7 +133,9 @@ public class CarController {
         if ((car.getMileage()) != (existingCar.getMileage())){
             existingCar.setMileage(car.getMileage());
         }
-        cars.set(id, existingCar);
+
+        carRepository.save(existingCar);
+
         return ResponseEntity.noContent().build(); // 200 code wordt teruggegeven
     }
 

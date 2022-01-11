@@ -1,8 +1,16 @@
 package nl.novi.garage.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "cars")
 public class Car {
 
     //Attribute
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     private String brand;
     private String model;
     private String fuel;
@@ -13,6 +21,15 @@ public class Car {
     //Constructor not necessary
 
     //Getters and setters
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getBrand() {
         return brand;
     }
@@ -53,11 +70,11 @@ public class Car {
         this.year = year;
     }
 
-    public Double getMileage() {
+    public double getMileage() {
         return mileage;
     }
 
-    public void setMileage(Double mileage) {
+    public void setMileage(double mileage) {
         this.mileage = mileage;
     }
 }
