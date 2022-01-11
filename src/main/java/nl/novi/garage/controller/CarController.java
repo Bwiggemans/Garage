@@ -4,7 +4,9 @@ import nl.novi.garage.model.Car;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,13 +66,17 @@ public class CarController {
     @PostMapping(value = "/cars")
     public ResponseEntity<Object> addCar(@RequestBody Car car){
         cars.add(car);
-        return ResponseEntity.created(null).build(); // 200 code wordt teruggegeven
+        int newId = cars.size() - 1;
+
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newId).toUri();
+
+        return ResponseEntity.created(location).build();
     }
 
     @PutMapping(value = "/cars/{id}")
     public ResponseEntity<Object> updateCar(@PathVariable int id, @RequestBody Car car){
         cars.set(id, car);
-        return ResponseEntity.created(null).build(); // 200 code wordt teruggegeven
+        return ResponseEntity.noContent().build(); // 200 code wordt teruggegeven
     }
 
     @PatchMapping(value = "/cars/{id}")
@@ -95,7 +101,7 @@ public class CarController {
             existingCar.setMileage(car.getMileage());
         }
         cars.set(id, existingCar);
-        return ResponseEntity.created(null).build(); // 200 code wordt teruggegeven
+        return ResponseEntity.noContent().build(); // 200 code wordt teruggegeven
     }
 
 }
