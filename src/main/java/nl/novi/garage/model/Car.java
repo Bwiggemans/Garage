@@ -21,8 +21,9 @@ public class Car {
     private Integer year;
     private double mileage;
 
-    //Constructor not necessary
+    //Constructor is niet nodig binnen Springboot
 
-    //Getters and setters vervallen i.v.m. toevoegen Lombok dependency
+    //Getters and setters in code ++
+    // vervallen i.v.m. toevoegen Lombok dependency
 
 }
