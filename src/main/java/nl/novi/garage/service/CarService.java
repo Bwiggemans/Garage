@@ -1,10 +1,14 @@
 package nl.novi.garage.service;
 
+import ch.qos.logback.core.joran.conditional.IfAction;
+import nl.novi.garage.exception.RecordNotFoundException;
 import nl.novi.garage.model.Car;
 import nl.novi.garage.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class CarService {
@@ -17,7 +21,15 @@ public class CarService {
     }
 
     public Car getCar(int id){
-        return carRepository.findById(id).orElse(null);
+        Optional<Car> optionalCar = carRepository.findById(id);
+
+        if (optionalCar.isPresent()){
+           return optionalCar.get();
+        }
+        else {
+            //exception maken
+            throw new RecordNotFoundException("ID does not exist!!!");
+        }
     }
 
     public void deleteCar(int id){
@@ -30,27 +42,27 @@ public class CarService {
     }
 
     public void updateCar(int id, Car car){
-        Car storeCar = carRepository.findById(id).orElse(null);
+        Car existingCar = carRepository.findById(id).orElse(null);
 
         if (!car.getBrand().isEmpty()) {
-            storeCar.setBrand(car.getBrand());
+            existingCar.setBrand(car.getBrand());
         }
         if (!car.getModel().isEmpty()) {
-            storeCar.setModel(car.getModel());
+            existingCar.setModel(car.getModel());
         }
         if (!car.getFuel().isEmpty()) {
-            storeCar.setFuel(car.getFuel());
+            existingCar.setFuel(car.getFuel());
         }
         if (!car.getTransmission().isEmpty()) {
-            storeCar.setTransmission(car.getTransmission());
+            existingCar.setTransmission(car.getTransmission());
         }
-        if ((car.getYear()) != (storeCar.getYear())){
-            storeCar.setYear(car.getYear());
+        if ((car.getYear()) != (existingCar.getYear())){
+            existingCar.setYear(car.getYear());
         }
-        if ((car.getMileage()) != (storeCar.getMileage())){
-            storeCar.setMileage(car.getMileage());
+        if ((car.getMileage()) != (existingCar.getMileage())){
+            existingCar.setMileage(car.getMileage());
         }
-        carRepository.save(storeCar);
+        carRepository.save(existingCar);
     }
 
     public void partialUpdateCar(int id, Car car){
