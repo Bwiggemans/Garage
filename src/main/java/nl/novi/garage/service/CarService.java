@@ -16,13 +16,17 @@ public class CarService {
     @Autowired
     private CarRepository carRepository;
 
-    public Iterable<Car> getCars(){
-        return carRepository.findAll();
+    public Iterable<Car> getCars(String model){
+        if (model.isEmpty()){
+            return carRepository.findAll();
+        }
+        else {
+            return carRepository.findAllByModelContainingIgnoreCase(model);
+        }
     }
 
     public Car getCar(int id){
         Optional<Car> optionalCar = carRepository.findById(id);
-
         if (optionalCar.isPresent()){
            return optionalCar.get();
         }

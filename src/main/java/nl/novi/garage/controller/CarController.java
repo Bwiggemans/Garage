@@ -19,8 +19,8 @@ public class CarController {
     private CarService carService;
 
     @GetMapping(value = "/cars")
-    public ResponseEntity<Object> getCars(){
-        return ResponseEntity.ok(carService.getCars()); // Jackson zorgt ervoor object => json
+    public ResponseEntity<Object> getCars(@RequestParam(name="model", defaultValue = "")String model){
+        return ResponseEntity.ok(carService.getCars(model)); // Jackson zorgt ervoor object => json
     }
 
     @GetMapping(value = "/cars/{id}")
