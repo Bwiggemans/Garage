@@ -1,6 +1,7 @@
 package nl.novi.garage.service;
 
 import ch.qos.logback.core.joran.conditional.IfAction;
+import nl.novi.garage.dto.CarRequestDto;
 import nl.novi.garage.exception.RecordNotFoundException;
 import nl.novi.garage.model.Car;
 import nl.novi.garage.repository.CarRepository;
@@ -37,10 +38,23 @@ public class CarService {
     }
 
     public void deleteCar(int id){
-        carRepository.deleteById(id);
+        if (carRepository.existsById(id)){
+            carRepository.deleteById(id);
+        }
+        else {
+            throw new RecordNotFoundException("ID does not exist!!!");
+        }
     }
 
-    public int addCar(Car car){
+    public int addCar(CarRequestDto carRequestDto){
+        Car car = new Car();
+        car.setBrand(carRequestDto.getBrand());
+        car.setModel(carRequestDto.getModel());
+        car.setFuel(carRequestDto.getFuel());
+        car.setTransmission(carRequestDto.getTransmission());
+        car.setYear(carRequestDto.getYear());
+        car.setMileage(carRequestDto.getMileage());
+
         Car newCar = carRepository.save(car);
         return newCar.getId();
     }

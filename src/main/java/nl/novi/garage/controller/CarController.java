@@ -1,5 +1,6 @@
 package nl.novi.garage.controller;
 
+import nl.novi.garage.dto.CarRequestDto;
 import nl.novi.garage.model.Car;
 import nl.novi.garage.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +38,8 @@ public class CarController {
     }
 
     @PostMapping(value = "/cars")
-    public ResponseEntity<Object> addCar(@RequestBody Car car){
-        int newId = carService.addCar(car);
+    public ResponseEntity<Object> addCar(@Valid @RequestBody CarRequestDto carRequestDto){
+        int newId = carService.addCar(carRequestDto);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newId).toUri();
 
