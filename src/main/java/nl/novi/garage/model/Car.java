@@ -17,12 +17,14 @@ public class Car {
     private String brand;
     private String model;
     private String fuel;
+    private String licensePlate;
     private String transmission;
     private Integer year;
     private double mileage;
 
-    //Constructor is niet nodig binnen Springboot
+    //Constructor is not necessary within Springboot
 
-    //Getters and setters in code ++
-    // vervallen i.v.m. toevoegen Lombok dependency
+/*  Getters and setters in code ++
+    are dropped in connection with adding Lombok dependency
+ */
 }

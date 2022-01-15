@@ -32,7 +32,7 @@ public class CarService {
            return optionalCar.get();
         }
         else {
-            //exception maken
+            //exception create
             throw new RecordNotFoundException("ID does not exist!!!");
         }
     }
@@ -52,6 +52,7 @@ public class CarService {
         car.setModel(carRequestDto.getModel());
         car.setFuel(carRequestDto.getFuel());
         car.setTransmission(carRequestDto.getTransmission());
+        car.setLicensePlate(carRequestDto.getLicensePlate());
         car.setYear(carRequestDto.getYear());
         car.setMileage(carRequestDto.getMileage());
 
@@ -73,6 +74,9 @@ public class CarService {
         }
         if (!car.getTransmission().isEmpty()) {
             existingCar.setTransmission(car.getTransmission());
+        }
+        if (!car.getLicensePlate().isEmpty()) {
+            existingCar.setLicensePlate(car.getLicensePlate());
         }
         if ((car.getYear()) != (existingCar.getYear())){
             existingCar.setYear(car.getYear());
@@ -97,6 +101,9 @@ public class CarService {
         }
         if (!(car.getTransmission()==null) && !car.getTransmission().isEmpty()){
             existingCar.setTransmission(car.getTransmission());
+        }
+        if (!(car.getLicensePlate()==null) && !car.getLicensePlate().isEmpty()){
+            existingCar.setLicensePlate(car.getLicensePlate());
         }
         if ((car.getYear()) != (existingCar.getYear())){
             existingCar.setYear(car.getYear());

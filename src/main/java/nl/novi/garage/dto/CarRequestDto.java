@@ -7,7 +7,7 @@ import javax.validation.constraints.*;
 
 public class CarRequestDto {
 
-    //Attribute
+    //Attribute validation
     @NotBlank
     @Size(min = 1, max = 3)
     private String brand;
@@ -21,11 +21,15 @@ public class CarRequestDto {
     private String fuel;
 
     @NotBlank
+    @Size(min = 8, max = 8)
+    private String licensePlate;
+
+    @NotBlank
     @Size(min = 1, max = 9)
     private String transmission;
 
     @Max(2022)
-    @Min(1944)
+    @Min(1944)  //Kia wasfounded 1944
     private Integer year;
 
     @Max(999999)
@@ -33,6 +37,15 @@ public class CarRequestDto {
     private double mileage;
 
     //Getters and setters
+
+    public String getLicensePlate() {
+        return licensePlate;
+    }
+
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
+    }
+
     public String getBrand() {
         return brand;
     }

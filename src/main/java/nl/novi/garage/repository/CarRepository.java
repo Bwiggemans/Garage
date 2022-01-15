@@ -10,9 +10,9 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
     Iterable<Car> findAllByModel(String Model);
     Iterable<Car> findAllByModelContainingIgnoreCase(String Model);
 
-    //  Zoeken met gedeelte String in attribuut title:
-/*    @Query(value = "SELECT * FROM cars b WHERE b.model LIKE %:s%", nativeQuery = true) // using SQL
-    Iterable<Car> searchByModelLike(@Param("s") String s);
 
+    //  Search instruction with SQL query attribuut title:
+/*  @Query(value = "SELECT * FROM cars b WHERE b.model LIKE %:s%", nativeQuery = true) // using SQL
+    Iterable<Car> searchByModelLike(@Param("s") String s);
  */
 }

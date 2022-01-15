@@ -22,19 +22,19 @@ public class CarController {
 
     @GetMapping(value = "/cars")
     public ResponseEntity<Object> getCars(@RequestParam(name="model", defaultValue = "")String model){
-        return ResponseEntity.ok(carService.getCars(model)); // Jackson zorgt ervoor object => json
+        return ResponseEntity.ok(carService.getCars(model)); // Jackson takes care of object => json
     }
 
     @GetMapping(value = "/cars/{id}")
     public ResponseEntity<Object> getCar(@PathVariable int id){
-        return ResponseEntity.ok(carService.getCar(id)); // Jackson zorgt ervoor object => json
+        return ResponseEntity.ok(carService.getCar(id)); // Jackson takes care of object => json
     }
 
     @DeleteMapping(value = "/cars/{id}")
     public ResponseEntity<Object> deleteCar(@PathVariable int id){
         carService.deleteCar(id);
-        return ResponseEntity.noContent().build(); // De header builder heeft een body nodig om te kunnen functioneren
-                                                    // 200 code wordt teruggegeven
+        return ResponseEntity.noContent().build(); // De header builder needs a body to work
+                                                    // 200 code will be returned
     }
 
     @PostMapping(value = "/cars")
@@ -50,14 +50,14 @@ public class CarController {
     public ResponseEntity<Object> updateCar(@PathVariable int id, @RequestBody Car car){
         carService.updateCar(id, car);
 
-        return ResponseEntity.noContent().build(); // 200 code wordt teruggegeven
+        return ResponseEntity.noContent().build(); // 204 code will be returned
     }
 
     @PatchMapping(value = "/cars/{id}")
     public ResponseEntity<Object> partialUpdateCar(@PathVariable int id, @RequestBody Car car){
         carService.partialUpdateCar(id, car);
 
-        return ResponseEntity.noContent().build(); // 200 code wordt teruggegeven
+        return ResponseEntity.noContent().build(); // 204 code will be returned
     }
 
 }
