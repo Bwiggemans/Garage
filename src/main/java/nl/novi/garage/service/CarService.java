@@ -2,6 +2,7 @@ package nl.novi.garage.service;
 
 import ch.qos.logback.core.joran.conditional.IfAction;
 import nl.novi.garage.dto.CarRequestDto;
+import nl.novi.garage.exception.BadRequestException;
 import nl.novi.garage.exception.RecordNotFoundException;
 import nl.novi.garage.model.Car;
 import nl.novi.garage.repository.CarRepository;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -17,12 +19,12 @@ public class CarService {
     @Autowired
     private CarRepository carRepository;
 
-    public Iterable<Car> getCars(String model){
-        if (model.isEmpty()){
+    public Iterable<Car> getCars(String licencePlate){
+        if (licencePlate.isEmpty()){
             return carRepository.findAll();
         }
         else {
-            return carRepository.findAllByModelContainingIgnoreCase(model);
+            return carRepository.findAllByLicensePlateContainingIgnoreCase(licencePlate);
         }
     }
 
@@ -47,6 +49,11 @@ public class CarService {
     }
 
     public int addCar(CarRequestDto carRequestDto){
+        String licensePlate = carRequestDto.getLicensePlate();
+        List<Car> books = (List<Car>)carRepository.findAllByLicensePlate(licensePlate);
+        if (books.size() > 0) {
+            throw new BadRequestException("License-plate already exists!!!");
+        }
         Car car = new Car();
         car.setBrand(carRequestDto.getBrand());
         car.setModel(carRequestDto.getModel());

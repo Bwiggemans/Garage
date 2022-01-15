@@ -7,8 +7,8 @@ import org.springframework.data.repository.query.Param;
 
 public interface CarRepository extends JpaRepository<Car, Integer> {
 
-    Iterable<Car> findAllByModel(String Model);
-    Iterable<Car> findAllByModelContainingIgnoreCase(String Model);
+    Iterable<Car> findAllByLicensePlate(String licensePlate);
+    Iterable<Car> findAllByLicensePlateContainingIgnoreCase(String licensePlate);
 
 
     //  Search instruction with SQL query attribuut title:
