@@ -50,8 +50,8 @@ public class CarService {
 
     public int addCar(CarRequestDto carRequestDto){
         String licensePlate = carRequestDto.getLicensePlate();
-        List<Car> books = (List<Car>)carRepository.findAllByLicensePlate(licensePlate);
-        if (books.size() > 0) {
+        List<Car> cars = (List<Car>)carRepository.findAllByLicensePlate(licensePlate);
+        if (cars.size() > 0) {
             throw new BadRequestException("License-plate already exists!!!");
         }
         Car car = new Car();
@@ -68,6 +68,7 @@ public class CarService {
     }
 
     public void updateCar(int id, Car car){
+
         Car existingCar = carRepository.findById(id).orElse(null);
 
         if (!car.getBrand().isEmpty()) {
@@ -95,6 +96,7 @@ public class CarService {
     }
 
     public void partialUpdateCar(int id, Car car){
+
         Car existingCar = carRepository.findById(id).orElse(null);
 
         if (!(car.getBrand()==null) && !car.getBrand().isEmpty()){
