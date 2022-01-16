@@ -56,10 +56,10 @@ public class CustomerService {
         }
         Customer customer = new Customer();
         customer.setName(customerRequestDto.getName());
-        customer.setAdress(customer.getAdress());
+        customer.setAdress(customerRequestDto.getAdress());
         customer.setResidence(customerRequestDto.getResidence());
         customer.setPostalCode(customerRequestDto.getPostalCode());
-        customer.setEmail(customer.getEmail());
+        customer.setEmail(customerRequestDto.getEmail());
         customer.setAreaCode(customerRequestDto.getAreaCode());
         customer.setPhoneNumber(customerRequestDto.getPhoneNumber());
 

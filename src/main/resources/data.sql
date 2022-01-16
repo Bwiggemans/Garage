@@ -84,6 +84,11 @@ VALUES
  ('Bosman', 'Bredastraat 1956', 'Heerlen', '6541IO', 'bosman@gmail.com',045, 5451266),
  ('Hofman', 'Delftstraat 87', 'Heerlen', '3652PP', 'hofman@gmail.com',045, 5329811);
 
+INSERT INTO spareparts (brand, part, part_number, price, stock)
+VALUES
+
+ ('Hanno', 'Oliefilter', '987456', 94.9, 45);
+
 
 
 
