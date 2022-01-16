@@ -1,5 +1,6 @@
 package nl.novi.garage.controller;
 
+import nl.novi.garage.dto.CustomerRequestDto;
 import nl.novi.garage.model.Car;
 import nl.novi.garage.model.Customer;
 import nl.novi.garage.service.CustomerService;
@@ -35,8 +36,8 @@ public class CustomerController {
     }
 
     @PostMapping(value = "/customers")
-    public ResponseEntity<Object> addCustomer(@RequestBody Customer customer){
-        int newId = customerService.addCustomer(customer);
+    public ResponseEntity<Object> addCustomer(@Valid @RequestBody CustomerRequestDto customerRequestDto){
+        int newId = customerService.addCustomer(customerRequestDto);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newId).toUri();
 

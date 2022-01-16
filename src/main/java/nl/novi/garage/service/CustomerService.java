@@ -1,5 +1,6 @@
 package nl.novi.garage.service;
 
+import nl.novi.garage.dto.CustomerRequestDto;
 import nl.novi.garage.exception.BadRequestException;
 import nl.novi.garage.exception.RecordNotFoundException;
 import nl.novi.garage.model.Car;
@@ -46,12 +47,21 @@ public class CustomerService {
         }
     }
 
-    public int addCustomer(Customer customer){
-        String email = customer.getEmail();
+    public int addCustomer(CustomerRequestDto customerRequestDto){
+
+        String email = customerRequestDto.getEmail();
         List<Customer> customers = (List<Customer>)customerRepository.findAllByEmail(email);
         if (customers.size() > 0) {
             throw new BadRequestException("E-mail already exists!!!");
         }
+        Customer customer = new Customer();
+        customer.setName(customerRequestDto.getName());
+        customer.setAdress(customer.getAdress());
+        customer.setResidence(customerRequestDto.getResidence());
+        customer.setPostalCode(customerRequestDto.getPostalCode());
+        customer.setEmail(customer.getEmail());
+        customer.setAreaCode(customerRequestDto.getAreaCode());
+        customer.setPhoneNumber(customerRequestDto.getPhoneNumber());
 
         Customer newCustomer = customerRepository.save(customer);
         return newCustomer.getId();
