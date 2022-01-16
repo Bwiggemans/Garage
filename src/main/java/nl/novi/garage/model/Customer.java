@@ -19,8 +19,8 @@ public class Customer {
     private String residence;
     private String postalCode;
     private String email;
-    private int areaCode;
-    private int phoneNumber;
+    private Integer areaCode;
+    private Integer phoneNumber;
 
     //Constructor is not necessary within Springboot
 

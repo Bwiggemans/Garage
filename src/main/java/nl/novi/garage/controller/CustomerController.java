@@ -1,5 +1,6 @@
 package nl.novi.garage.controller;
 
+import nl.novi.garage.model.Car;
 import nl.novi.garage.model.Customer;
 import nl.novi.garage.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,8 @@ public class CustomerController {
     private CustomerService customerService;
 
     @GetMapping(value = "/customers")
-    public ResponseEntity<Object> getCustomers(@RequestParam(name="licenseplate", defaultValue = "")String licenseplate){
-        return ResponseEntity.ok(customerService.getCustomers(licenseplate)); // Jackson takes customere of object => json
+    public ResponseEntity<Object> getCustomers(@RequestParam(name="name", defaultValue = "")String name){
+        return ResponseEntity.ok(customerService.getCustomers(name)); // Jackson takes customere of object => json
     }
 
     @GetMapping(value = "/customers/{id}")
@@ -41,5 +42,20 @@ public class CustomerController {
 
         return ResponseEntity.created(location).build();
     }
+
+    @PutMapping(value = "/customers/{id}")
+    public ResponseEntity<Object> updateCustomer(@PathVariable int id, @RequestBody Customer customer){
+        customerService.updateCustomer(id, customer);
+
+        return ResponseEntity.noContent().build(); // 204 code will be returned
+    }
+
+    @PatchMapping(value = "/customers/{id}")
+    public ResponseEntity<Object> partialUpdateCustomer(@PathVariable int id, @RequestBody Customer customer){
+        customerService.partialUpdateCustomer(id, customer);
+
+        return ResponseEntity.noContent().build(); // 204 code will be returned
+    }
+
 
 }
