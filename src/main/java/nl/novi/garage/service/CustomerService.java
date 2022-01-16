@@ -1,5 +1,6 @@
 package nl.novi.garage.service;
 
+import nl.novi.garage.exception.BadRequestException;
 import nl.novi.garage.exception.RecordNotFoundException;
 import nl.novi.garage.model.Car;
 import nl.novi.garage.model.Customer;
@@ -7,6 +8,7 @@ import nl.novi.garage.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -45,6 +47,11 @@ public class CustomerService {
     }
 
     public int addCustomer(Customer customer){
+        String email = customer.getEmail();
+        List<Customer> customers = (List<Customer>)customerRepository.findAllByEmail(email);
+        if (customers.size() > 0) {
+            throw new BadRequestException("E-mail already exists!!!");
+        }
 
         Customer newCustomer = customerRepository.save(customer);
         return newCustomer.getId();

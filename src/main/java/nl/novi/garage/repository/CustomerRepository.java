@@ -8,5 +8,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
     Iterable<Customer> findAllByName(String name);
     Iterable<Customer> findAllByNameContainingIgnoreCase(String name);
+    Iterable<Customer> findAllByEmail(String email);
+
 
 }
