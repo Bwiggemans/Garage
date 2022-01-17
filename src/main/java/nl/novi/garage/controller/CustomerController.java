@@ -58,5 +58,14 @@ public class CustomerController {
         return ResponseEntity.noContent().build(); // 204 code will be returned
     }
 
+    @GetMapping(value = "/customers/{id}/cars")
+    public ResponseEntity<Object> getCustomerCars(@PathVariable int id){
+        return ResponseEntity.ok(customerService.getCustomerCars(id)); // Jackson takes customere of object => json
+    }
 
+    @PostMapping(value = "/customers/{id}/cars")
+    public ResponseEntity<Object> addCustomerCar(@PathVariable int id, @RequestBody Car car){
+        customerService.addCustomerCar(id, car);
+        return ResponseEntity.created(null).build(); // Jackson takes customere of object => json
+    }
 }

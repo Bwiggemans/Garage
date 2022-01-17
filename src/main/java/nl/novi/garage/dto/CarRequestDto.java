@@ -37,7 +37,6 @@ public class CarRequestDto {
     private double mileage;
 
     //Getters and setters
-
     public String getLicensePlate() {
         return licensePlate;
     }

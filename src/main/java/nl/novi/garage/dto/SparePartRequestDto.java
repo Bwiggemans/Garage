@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 
 public class SparePartRequestDto {
 
-    //Attribute
+    //Attribute validation
     @NotBlank
     @Size(max = 25)
     private String brand;

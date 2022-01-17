@@ -3,6 +3,8 @@ package nl.novi.garage.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -21,6 +23,11 @@ public class Customer {
     private String email;
     private Integer areaCode;
     private Integer phoneNumber;
+
+    //Make relation oneToMany with list of cars
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "customers_id", referencedColumnName = "id")
+    private List<Car> cars = new ArrayList<>();
 
     //Constructor is not necessary within Springboot
 

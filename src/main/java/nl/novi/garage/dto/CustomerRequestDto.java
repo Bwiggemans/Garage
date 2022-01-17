@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 
 public class CustomerRequestDto {
 
-    //Attribute
+    //Attribute validation
     @NotBlank
     @Size(max = 15)
     private String name;

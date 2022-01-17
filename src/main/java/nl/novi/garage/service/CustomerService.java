@@ -5,6 +5,7 @@ import nl.novi.garage.exception.BadRequestException;
 import nl.novi.garage.exception.RecordNotFoundException;
 import nl.novi.garage.model.Car;
 import nl.novi.garage.model.Customer;
+import nl.novi.garage.repository.CarRepository;
 import nl.novi.garage.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,9 @@ public class CustomerService {
 
     @Autowired
     private CustomerRepository customerRepository;
+
+    @Autowired
+    private CarRepository carRepository;
 
     public Iterable<Customer> getCustomers(String name){
         if (name.isEmpty()){
@@ -123,4 +127,34 @@ public class CustomerService {
         customerRepository.save(existingCustomer);
     }
 
+    public Iterable<Car> getCustomerCars(int id){
+        Optional<Customer> optionalCustomer = customerRepository.findById(id);
+
+        if (optionalCustomer.isPresent()){
+            Customer customer = optionalCustomer.get();
+            return customer.getCars();
+        }
+        else {
+            //exception create
+            throw new RecordNotFoundException("ID does not exist!!!");
+        }
+    }
+
+    public void addCustomerCar(int id, Car car){
+        Optional<Customer> optionalCustomer = customerRepository.findById(id);
+
+        if (optionalCustomer.isPresent()){
+            Customer customer = optionalCustomer.get();
+            List<Car> cars = customer.getCars();
+
+            carRepository.save(car);
+
+            cars.add(car);
+            customerRepository.save(customer);
+        }
+        else {
+            //exception create
+            throw new RecordNotFoundException("ID does not exist!!!");
+        }
+    }
 }
