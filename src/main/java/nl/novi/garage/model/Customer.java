@@ -25,8 +25,7 @@ public class Customer {
     private Integer phoneNumber;
 
     //Make relation oneToMany with list of cars
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "customers_id", referencedColumnName = "id")
+    @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Car> cars = new ArrayList<>();
 
     //Constructor is not necessary within Springboot

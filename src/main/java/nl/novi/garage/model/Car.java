@@ -1,5 +1,6 @@
 package nl.novi.garage.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,6 +22,12 @@ public class Car {
     private String transmission;
     private Integer year;
     private double mileage;
+
+    @JsonIgnoreProperties("cars")
+    @ManyToOne
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    private Customer owner;
+
 
     //Constructor is not necessary within Springboot
 
