@@ -1,3 +1,16 @@
+INSERT INTO authorities (authority, username)
+VALUES
+
+('user', 'USER_ROLE'),
+('admin', 'USER_ROLE'),
+('admin', 'ADMIN_ROLE');
+
+INSERT INTO users (username, email, enabled, password)
+VALUES
+
+('user', 'user@gmail.com', true, 'password'),
+('admin', 'admin@gmail.com', true, 'password');
+
 INSERT INTO customers (name, adress, residence, postal_code, email, area_code, phone_number)
 VALUES
 
