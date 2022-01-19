@@ -1,15 +1,13 @@
-INSERT INTO authorities (authority, username)
+INSERT INTO users (username, password, enabled, email)
 VALUES
+    ('user', '$2y$10$USQg8PBzmAMhm83ojdVixuktz95NOL0IbhwFOQaOvzWhTt0TabHtu', true, 'user@novi.nl'),
+    ('admin', '$2y$10$USQg8PBzmAMhm83ojdVixuktz95NOL0IbhwFOQaOvzWhTt0TabHtu', true, 'admin@novi.nl');
 
-('user', 'USER_ROLE'),
-('admin', 'USER_ROLE'),
-('admin', 'ADMIN_ROLE');
-
-INSERT INTO users (username, email, enabled, password)
+INSERT INTO authorities (username, authority)
 VALUES
-
-('user', 'user@gmail.com', true, 'password'),
-('admin', 'admin@gmail.com', true, 'password');
+    ('user', 'ROLE_USER'),
+    ('admin', 'ROLE_USER'),
+    ('admin', 'ROLE_ADMIN');
 
 INSERT INTO customers (name, adress, residence, postal_code, email, area_code, phone_number)
 VALUES
