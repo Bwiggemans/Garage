@@ -1,4 +1,4 @@
-package nl.novi.garage.controller.config;
+package nl.novi.garage.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
