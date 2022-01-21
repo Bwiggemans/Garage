@@ -51,6 +51,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(PATCH,"/users/{^[\\w]$}/password").authenticated()
                 .antMatchers("/users/**").hasRole("ADMIN")
+                .antMatchers("/carmodels/**").hasRole("USER")
                 .antMatchers("/cars/**").hasRole("USER")
                 .antMatchers("/spareparts/**").hasRole("USER")
                 .antMatchers("/customers/**").hasRole("USER")

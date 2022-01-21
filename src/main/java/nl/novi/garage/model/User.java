@@ -48,10 +48,38 @@ public class User {
                 this.authorities.removeIf(authority -> authority.getAuthority().equalsIgnoreCase(authorityString));
         }
 
-
         //Constructor is not necessary within Springboot
 
-/*  Getters and setters in code ++
-    are dropped in connection with adding Lombok dependency
- */
+        //Getters and setters
+        public String getUsername() {
+                return username;
+        }
+
+        public void setUsername(String username) {
+                this.username = username;
+        }
+
+        public String getPassword() {
+                return password;
+        }
+
+        public void setPassword(String password) {
+                this.password = password;
+        }
+
+        public boolean isEnabled() {
+                return enabled;
+        }
+
+        public void setEnabled(boolean enabled) {
+                this.enabled = enabled;
+        }
+
+        public String getEmail() {
+                return email;
+        }
+
+        public void setEmail(String email) {
+                this.email = email;
+        }
 }
