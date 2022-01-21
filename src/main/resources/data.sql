@@ -1,11 +1,15 @@
 INSERT INTO users (username, password, enabled, email)
 VALUES
     ('user', '$2y$10$USQg8PBzmAMhm83ojdVixuktz95NOL0IbhwFOQaOvzWhTt0TabHtu', true, 'user@novi.nl'),
+    ('monteur', '$2y$10$USQg8PBzmAMhm83ojdVixuktz95NOL0IbhwFOQaOvzWhTt0TabHtu', true, 'monteur@novi.nl'),
+    ('administrateur', '$2y$10$USQg8PBzmAMhm83ojdVixuktz95NOL0IbhwFOQaOvzWhTt0TabHtu', true, 'administrateur@novi.nl'),
     ('admin', '$2y$10$USQg8PBzmAMhm83ojdVixuktz95NOL0IbhwFOQaOvzWhTt0TabHtu', true, 'admin@novi.nl');
 
 INSERT INTO authorities (username, authority)
 VALUES
     ('user', 'ROLE_USER'),
+    ('monteur', 'ROLE_USER'),
+    ('administrateur', 'ROLE_USER'),
     ('admin', 'ROLE_USER'),
     ('admin', 'ROLE_ADMIN');
 

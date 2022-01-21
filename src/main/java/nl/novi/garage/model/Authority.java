@@ -19,4 +19,11 @@ public class Authority implements Serializable{
     @Id
     @Column(nullable = false)
     private String authority;
+
+    //Constructors
+    public Authority() {}
+    public Authority(String username, String authority) {
+        this.username = username;
+        this.authority = authority;
+    }
 }
