@@ -26,7 +26,33 @@ public class Customer {
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Car> cars = new ArrayList<>();
 
-    //Constructor is not necessary within Springboot
+    //Default Constructor
+    public Customer() {
+    }
+
+    public Customer(String name, String adress, String residence, String postalCode, String email, Integer areaCode, Integer phoneNumber, List<Car> cars) {
+        this.name = name;
+        this.adress = adress;
+        this.residence = residence;
+        this.postalCode = postalCode;
+        this.email = email;
+        this.areaCode = areaCode;
+        this.phoneNumber = phoneNumber;
+        this.cars = cars;
+    }
+
+    //Full Constructor
+    public Customer(int id, String name, String adress, String residence, String postalCode, String email, Integer areaCode, Integer phoneNumber, List<Car> cars) {
+        this.id = id;
+        this.name = name;
+        this.adress = adress;
+        this.residence = residence;
+        this.postalCode = postalCode;
+        this.email = email;
+        this.areaCode = areaCode;
+        this.phoneNumber = phoneNumber;
+        this.cars = cars;
+    }
 
     //Getters and setters
     public int getId() {

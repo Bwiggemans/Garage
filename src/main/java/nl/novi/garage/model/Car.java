@@ -26,7 +26,33 @@ public class Car {
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer owner;
 
-    //Constructor is not necessary within Springboot
+    //Default Constructor
+    public Car() {
+    }
+
+    public Car(String brand, String model, String fuel, String licensePlate, String transmission, Integer year, double mileage, Customer owner) {
+        this.brand = brand;
+        this.model = model;
+        this.fuel = fuel;
+        this.licensePlate = licensePlate;
+        this.transmission = transmission;
+        this.year = year;
+        this.mileage = mileage;
+        this.owner = owner;
+    }
+
+    //Full constructor
+    public Car(int id, String brand, String model, String fuel, String licensePlate, String transmission, Integer year, double mileage, Customer owner) {
+        this.id = id;
+        this.brand = brand;
+        this.model = model;
+        this.fuel = fuel;
+        this.licensePlate = licensePlate;
+        this.transmission = transmission;
+        this.year = year;
+        this.mileage = mileage;
+        this.owner = owner;
+    }
 
     //Getters and setters
     public int getId() {
