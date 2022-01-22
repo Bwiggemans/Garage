@@ -1,6 +1,5 @@
 package nl.novi.garage.model;
 
-import lombok.Data;
 
 import javax.persistence.*;
 
