@@ -19,7 +19,27 @@ public class SparePart {
     private double price;
     private Integer stock;
 
-    //Constructor is not necessary within Springboot
+    //Default Constructor
+    public SparePart() {
+    }
+
+    public SparePart(String brand, String part, String partNumber, double price, Integer stock) {
+        this.brand = brand;
+        this.part = part;
+        this.partNumber = partNumber;
+        this.price = price;
+        this.stock = stock;
+    }
+
+    //Full Constructor
+    public SparePart(int id, String brand, String part, String partNumber, double price, Integer stock) {
+        this.id = id;
+        this.brand = brand;
+        this.part = part;
+        this.partNumber = partNumber;
+        this.price = price;
+        this.stock = stock;
+    }
 
     //Getters and setters
     public int getId() {
