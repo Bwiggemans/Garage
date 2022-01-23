@@ -147,7 +147,6 @@ public class CustomerService {
             Customer customer = optionalCustomer.get();
             List<Car> cars = customer.getCars();
 
-            cars.add(car);
             car.setOwner(customer);
             customerRepository.save(customer);
             carRepository.save(car);
