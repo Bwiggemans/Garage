@@ -64,4 +64,5 @@ public class SparePartRequestDto {
     public void setStock(Integer stock) {
         this.stock = stock;
     }
+
 }

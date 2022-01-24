@@ -15,7 +15,6 @@ VALUES
 
 INSERT INTO customers (name, adress, residence, postal_code, email, area_code, phone_number)
 VALUES
-
 ('Klinkenberg', 'Amsterdamstraat 21', 'Heerlen', '1245AB', 'klinkenberg@gmail.com',045, 5318095),
 ('Janssen', 'Rotterdamstraat 85', 'Heerlen', '1245GC', 'janssen@gmail.com',045, 5314596),
 ('Hermans', 'DenHaagstraat 7', 'Heerlen', '6185GT', 'hermans@gmail.com',045, 5327544),
@@ -67,7 +66,6 @@ VALUES
 
 INSERT INTO cars (brand, model, fuel, transmission, license_plate, year, mileage, customer_id)
 VALUES
-
 ('Kia', 'Sportage', 'LPG', 'Automatic', 'JC-012-Q',2020, 7500.8, 1),
 ('Kia', 'Forte', 'Hydrogen', 'Manual', 'J-438-KK',2021, 501.8, 2),
 ('Kia', 'Picanto', 'Petrol', 'Automatic', 'BV-032-V',2019, 10195.8, 3),
@@ -131,7 +129,6 @@ VALUES
 
 INSERT INTO spareparts (brand, part, part_number, price, stock)
 VALUES
-
  ('Bosch', 'Oliefilter', '987456', 21.81, 45),
  ('Bosch', 'Luchtfilter', '932145', 15.28, 81),
  ('Mobil', 'Motorolie 5W40', '985247', 47.85, 95),

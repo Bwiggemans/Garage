@@ -93,4 +93,5 @@ public class CustomerRequestDto {
     public void setPhoneNumber(Integer phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
 }

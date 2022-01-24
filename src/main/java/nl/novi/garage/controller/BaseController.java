@@ -10,6 +10,7 @@ public class BaseController {
     public String welcomeGarage(){
         return "Welcome to the Garage webservice";
     }
+
     @GetMapping(value = "/goodbye")
     public String goodbyeGarage(){
         return "Goodbye, you are leaving the Garage webservice. Have a nice day!";

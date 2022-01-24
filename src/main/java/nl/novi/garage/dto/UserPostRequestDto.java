@@ -40,4 +40,5 @@ public class UserPostRequestDto {
     public void setAuthorities(Set<String> authorities) {
         this.authorities = authorities;
     }
+
 }

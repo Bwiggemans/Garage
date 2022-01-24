@@ -12,7 +12,7 @@ public class CarModelController {
     //Attribute
     private List<String> carModels = new ArrayList<>();
 
-    //Constructor
+    //Methode
     public CarModelController() {
         carModels.add("Ceed");
         carModels.add("Forte");

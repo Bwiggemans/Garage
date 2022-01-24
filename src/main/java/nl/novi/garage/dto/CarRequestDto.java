@@ -92,4 +92,5 @@ public class CarRequestDto {
     public void setMileage(double mileage) {
         this.mileage = mileage;
     }
+
 }

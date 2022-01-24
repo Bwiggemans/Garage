@@ -89,4 +89,5 @@ public class SparePart {
     public void setStock(Integer stock) {
         this.stock = stock;
     }
+
 }
