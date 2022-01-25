@@ -4,8 +4,8 @@
 
 Current settings:
 * postgresql database on //localhost:5432
-* database: springboot
-* user/owner: springboot
+* database: Garage
+* user/owner: postgres
 * password: springboot
 
 #### Seeded users
@@ -15,46 +15,57 @@ Current settings:
 
 ### Endpoints
 
-#### books
-* GET /api/v1/books
-* POST /api/v1/books
-* DELETE /api/v1/books/{id}
-* GET /api/v1/books/{id}
-* GET /api/v1/books/{id}/copies
-* PATCH /api/v1/books/{id}/copies
-* PATCH /api/v1/books/{id}/description
+#### welcome
+* GET /welcome
 
-#### borrowedCopies
-* GET /api/v1/borrowedCopies
-* POST /api/v1/borrowedCopies
-* DELETE /api/v1/borrowedCopies/{id}
-* GET /api/v1/borrowedCopies/{id}
+### goodbye
+* GET /goodbye
 
-#### copies
-* GET /api/v1/copies
-* POST /api/v1/copies
-* DELETE /api/v1/copies/{id}
-* GET /api/v1/copies/{id}
+###authenticate
+* POST /authenticate
 
-#### members
-* GET /api/v1/members
-* POST /api/v1/members
-* DELETE /api/v1/members/{id}
-* GET /api/v1/members/{id}
-* GET /api/v1/members/{id}/borrowed
-* PATCH /api/v1/members/{id}/borrowed
-* DELETE /api/v1/members/{id}/borrowed/{borrowedCopyId}
+###carmodels
+* GET /carmodels
+* GET /carmodels/{id}
+* DELETE /carmodels/{id}
+* POST /carmodels
+
+#### cars
+* GET /cars
+* GET /cars/{id}
+* DELETE /cars/{id}
+* POST /cars
+* PUT /cars/{id}
+* PATCH /cars/{id}
+
+#### customers
+* GET /customers
+* GET /customers/{id}
+* GET /customers/{id}/cars
+* DELETE /customers/{id}
+* POST /customers
+* POST /customers/{id}/cars
+* PUT /customers/{id}
+* PATCH /customers/{id}
+
+#### spareparts
+* GET /spareparts
+* GET /spareparts/{id}
+* DELETE /spareparts/{id}
+* POST /spareparts
+* PUT /spareparts/{id}
+* PATCH /spareparts/{id}
 
 #### users
-* GET /api/v1/users
-* POST /api/v1/users
-* DELETE /api/v1/users/{username}
-* GET /api/v1/users/{username}
-* PUT /api/v1/users/{username}
-* GET /api/v1/users/{username}/authorities
-* POST /api/v1/users/{username}/authorities
-* DELETE /api/v1/users/{username}/authorities/{authority}
-* PATCH /api/v1/users/{username}/password
+* GET /users
+* GET /users/{username}
+* GET /users/{username}/{authorities}
+* DELETE /users/{username}
+* DELETE /users/{username}/authorities/{authority}
+* POST /users
+* POST /users/{username}/authorities
+* PUT /users/{username}
+* PATCH /users/{username}/password
 
 #### A Postman export has been included in the documentation directory.
 
