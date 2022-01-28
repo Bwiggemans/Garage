@@ -26,7 +26,7 @@ public class Car {
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer owner;
 
-    //Default Constructor
+    //Constructor
     public Car() {
     }
 
@@ -41,7 +41,7 @@ public class Car {
         this.owner = owner;
     }
 
-    //Full constructor
+    //constructor
     public Car(int id, String brand, String model, String fuel, String licensePlate, String transmission, Integer year, double mileage, Customer owner) {
         this.id = id;
         this.brand = brand;

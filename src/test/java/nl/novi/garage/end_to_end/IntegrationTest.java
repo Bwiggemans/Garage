@@ -28,7 +28,7 @@ public class IntegrationTest {
     }
 
     @Test
-    void shouldReturn200ForEndpointBooks() throws Exception {
+    void shouldReturn200ForEndpointCustomers() throws Exception {
         mockMvc.perform(get("/customers").with(user("user").roles("USER")))
                 .andExpect(status().isOk());
     }
