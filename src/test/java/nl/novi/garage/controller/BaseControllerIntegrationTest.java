@@ -33,5 +33,11 @@ class BaseControllerIntegrationTest {
                 .andExpect(content().string("Goodbye, you are leaving the Garage webservice. Have a nice day!"));
     }
 
+    @Test
+    void fileUpload(@Autowired MockMvc mvc) throws Exception {
+        mvc.perform(get("/"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("Endpoint: POST /file-upload"));
+    }
 
 }
