@@ -22,14 +22,32 @@ public class IntegrationTest {
     private MockMvc mockMvc;
 
     @Test
-    void shouldReturn200ForEndpointUsers() throws Exception {
+    void shouldReturn200ForEndpointUsersAdmin() throws Exception {
         mockMvc.perform(get("/users").with(user("admin").roles("ADMIN")))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    void shouldReturn200ForEndpointUsersUsers() throws Exception {
+        mockMvc.perform(get("/users").with(user("users").roles("ADMIN")))
                 .andExpect(status().isOk());
     }
 
     @Test
     void shouldReturn200ForEndpointCustomers() throws Exception {
         mockMvc.perform(get("/customers").with(user("user").roles("USER")))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    void shouldReturn200ForEndpointCars() throws Exception {
+        mockMvc.perform(get("/cars").with(user("user").roles("USER")))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    void shouldReturn200ForEndpointSpareParts() throws Exception {
+        mockMvc.perform(get("/spareparts").with(user("user").roles("USER")))
                 .andExpect(status().isOk());
     }
 
