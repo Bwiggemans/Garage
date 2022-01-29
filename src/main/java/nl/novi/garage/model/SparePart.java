@@ -19,7 +19,7 @@ public class SparePart {
     private double price;
     private Integer stock;
 
-    //Default Constructor
+    //Constructor
     public SparePart() {
     }
 
@@ -31,7 +31,7 @@ public class SparePart {
         this.stock = stock;
     }
 
-    //Full Constructor
+    //Constructor
     public SparePart(int id, String brand, String part, String partNumber, double price, Integer stock) {
         this.id = id;
         this.brand = brand;

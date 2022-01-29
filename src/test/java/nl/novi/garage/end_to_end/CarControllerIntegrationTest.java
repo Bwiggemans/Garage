@@ -1,4 +1,4 @@
-package nl.novi.garage.controller;
+package nl.novi.garage.end_to_end;
 
 import nl.novi.garage.GarageApplication;
 import org.junit.jupiter.api.Test;

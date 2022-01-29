@@ -26,7 +26,7 @@ public class Customer {
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Car> cars = new ArrayList<>();
 
-    //Default Constructor
+    //Constructor
     public Customer() {
     }
 
@@ -41,7 +41,7 @@ public class Customer {
         this.cars = cars;
     }
 
-    //Full Constructor
+    //Constructor
     public Customer(int id, String name, String adress, String residence, String postalCode, String email, Integer areaCode, Integer phoneNumber, List<Car> cars) {
         this.id = id;
         this.name = name;
