@@ -1,4 +1,4 @@
-package nl.novi.garage.end_to_end;
+package nl.novi.garage.integrations_tests;
 
 import nl.novi.garage.GarageApplication;
 import org.junit.jupiter.api.Test;
@@ -16,8 +16,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(classes = GarageApplication.class)
 @AutoConfigureMockMvc
-@EnableConfigurationProperties
-//@WithMockUser(username = "admin", roles = {"ADMIN"})
 public class CustomerControllerIntegrationTest {
 
     @Autowired

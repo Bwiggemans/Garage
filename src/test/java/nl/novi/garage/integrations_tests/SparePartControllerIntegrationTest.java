@@ -1,4 +1,4 @@
-package nl.novi.garage.end_to_end;
+package nl.novi.garage.integrations_tests;
 
 import nl.novi.garage.GarageApplication;
 import org.junit.jupiter.api.Test;
@@ -16,16 +16,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(classes = GarageApplication.class)
 @AutoConfigureMockMvc
-@EnableConfigurationProperties
-//@WithMockUser(username = "admin", roles = {"ADMIN"})
-public class CarControllerIntegrationTest {
+public class SparePartControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void shouldReturn200ForEndpointCars() throws Exception {
-        mockMvc.perform(get("/cars").with(user("user").roles("USER")))
+    void shouldReturn200ForEndpointSpareParts() throws Exception {
+        mockMvc.perform(get("/spareparts").with(user("user").roles("USER")))
                 .andExpect(status().isOk());
     }
 

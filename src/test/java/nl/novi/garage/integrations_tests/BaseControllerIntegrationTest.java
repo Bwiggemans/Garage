@@ -1,4 +1,4 @@
-package nl.novi.garage.controller;
+package nl.novi.garage.integrations_tests;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@EnableConfigurationProperties
 class BaseControllerIntegrationTest {
 
     @Autowired

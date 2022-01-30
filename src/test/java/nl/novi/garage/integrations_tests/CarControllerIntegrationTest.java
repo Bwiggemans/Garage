@@ -1,4 +1,4 @@
-package nl.novi.garage.end_to_end;
+package nl.novi.garage.integrations_tests;
 
 import nl.novi.garage.GarageApplication;
 import org.junit.jupiter.api.Test;
@@ -16,32 +16,23 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(classes = GarageApplication.class)
 @AutoConfigureMockMvc
-@EnableConfigurationProperties
-//@WithMockUser(username = "admin", roles = {"ADMIN"})
-public class UserControllerIntegrationTest {
+public class CarControllerIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void shouldReturn200ForEndpointUsersAdmin() throws Exception {
-        mockMvc.perform(get("/users").with(user("admin").roles("ADMIN")))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void shouldReturn200ForEndpointUsersUsers() throws Exception {
-        mockMvc.perform(get("/users").with(user("users").roles("ADMIN")))
+    void shouldReturn200ForEndpointCars() throws Exception {
+        mockMvc.perform(get("/cars").with(user("user").roles("USER")))
                 .andExpect(status().isOk());
     }
 
     @Test
     void shouldReturnJson() throws Exception {
 
-        mockMvc.perform(get("/users").contentType(MediaType.APPLICATION_JSON).with(user("admin").roles("ADMIN")))
+        mockMvc.perform(get("/spareparts").contentType(MediaType.APPLICATION_JSON).with(user("user").roles("USER")))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
     }
-
 
 }
