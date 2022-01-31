@@ -68,4 +68,5 @@ Current settings:
 * PATCH /users/{username}/password
 
 #### A Postman export has been included in the documentation directory.
+### Evenso are the class and the sequence diagrams.
 

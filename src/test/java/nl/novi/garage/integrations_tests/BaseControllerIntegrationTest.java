@@ -1,5 +1,6 @@
 package nl.novi.garage.integrations_tests;
 
+import nl.novi.garage.GarageApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -11,7 +12,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest
+@SpringBootTest(classes = GarageApplication.class)
 @AutoConfigureMockMvc
 class BaseControllerIntegrationTest {
 
