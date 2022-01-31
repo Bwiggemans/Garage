@@ -24,4 +24,57 @@ public class CarInspectionRepairShop {
     @ManyToOne
     private Customer customer;
 
+    @ManyToOne
+    private SparePart sparePart;
+
+    //Getters and setters
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getDateCarInspectionRepairOn() {
+        return dateCarInspectionRepairOn;
+    }
+
+    public void setDateCarInspectionRepairOn(LocalDateTime dateCarInspectionRepairOn) {
+        this.dateCarInspectionRepairOn = dateCarInspectionRepairOn;
+    }
+
+    public LocalDateTime getDateCarInspectionRepairFinish() {
+        return dateCarInspectionRepairFinish;
+    }
+
+    public void setDateCarInspectionRepairFinish(LocalDateTime dateCarInspectionRepairFinish) {
+        this.dateCarInspectionRepairFinish = dateCarInspectionRepairFinish;
+    }
+
+    public CarInspectionRepair getCarInspectionRepair() {
+        return carInspectionRepair;
+    }
+
+    public void setCarInspectionRepair(CarInspectionRepair carInspectionRepair) {
+        this.carInspectionRepair = carInspectionRepair;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public SparePart getSparePart() {
+        return sparePart;
+    }
+
+    public void setSparePart(SparePart sparePart) {
+        this.sparePart = sparePart;
+    }
 }
