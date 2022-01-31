@@ -17,6 +17,8 @@ public class CarInspectionRepair {
 
     private boolean inspection;
     private boolean repair;
+    private boolean consentCustomer;
+    private boolean repairCompleted;
 
     @ManyToOne
     private Car car;
@@ -57,6 +59,22 @@ public class CarInspectionRepair {
 
     public void setCar(Car car) {
         this.car = car;
+    }
+
+    public boolean isConsentCustomer() {
+        return consentCustomer;
+    }
+
+    public void setConsentCustomer(boolean consentCustomer) {
+        this.consentCustomer = consentCustomer;
+    }
+
+    public boolean isRepairCompleted() {
+        return repairCompleted;
+    }
+
+    public void setRepairCompleted(boolean repairCompleted) {
+        this.repairCompleted = repairCompleted;
     }
 
     public List<CarInspectionRepairShop> getCarInspectionRepairShop() {

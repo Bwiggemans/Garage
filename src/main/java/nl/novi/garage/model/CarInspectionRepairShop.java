@@ -21,8 +21,8 @@ public class CarInspectionRepairShop {
     @JsonManagedReference
     private CarInspectionRepair carInspectionRepair;
 
-    @ManyToOne
-    private Customer customer;
+//    @ManyToOne
+//    private Customer customer;
 
     @ManyToOne
     private SparePart sparePart;
@@ -62,13 +62,13 @@ public class CarInspectionRepairShop {
         this.carInspectionRepair = carInspectionRepair;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
+//    public Customer getCustomer() {
+//        return customer;
+//    }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+//    public void setCustomer(Customer customer) {
+//        this.customer = customer;
+//    }
 
     public SparePart getSparePart() {
         return sparePart;
