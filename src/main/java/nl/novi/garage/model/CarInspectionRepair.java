@@ -27,7 +27,7 @@ public class CarInspectionRepair {
     @JsonBackReference
     private List<CarInspectionRepairShop> carInspectionRepairShop = new ArrayList<>();
 
-    //Gettersand setters
+    //Getters and setters
 
     public Long getId() {
         return id;

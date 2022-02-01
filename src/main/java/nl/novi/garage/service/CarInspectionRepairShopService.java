@@ -2,6 +2,7 @@ package nl.novi.garage.service;
 
 import nl.novi.garage.exception.RecordNotFoundException;
 import nl.novi.garage.model.CarInspectionRepairShop;
+import nl.novi.garage.model.Customer;
 import nl.novi.garage.repository.CarInspectionRepairShopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,5 +41,12 @@ public class CarInspectionRepairShopService {
             throw new RecordNotFoundException("No carsRepairInspectionShop with id " + id);
         }
     }
+
+    public long createCarInspectionRepairShop(CarInspectionRepairShop carInspectionRepairShop){
+
+        CarInspectionRepairShop newCarInspectionRepairShop = carInspectionRepairShopRepository.save(carInspectionRepairShop);
+        return newCarInspectionRepairShop.getId();
+    }
+
 
 }
