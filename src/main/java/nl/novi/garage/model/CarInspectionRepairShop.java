@@ -1,5 +1,7 @@
 package nl.novi.garage.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -18,7 +20,7 @@ public class CarInspectionRepairShop {
 
 
     @ManyToOne
-    @JsonManagedReference
+//    @JsonIgnore
     private CarInspectionRepair carInspectionRepair;
 
 //    @ManyToOne

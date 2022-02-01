@@ -1,6 +1,8 @@
 package nl.novi.garage.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ public class CarInspectionRepair {
     private Car car;
 
     @OneToMany(mappedBy = "carInspectionRepair")
-    @JsonBackReference
+    @JsonIgnore
     private List<CarInspectionRepairShop> carInspectionRepairShop = new ArrayList<>();
 
     //Getters and setters
