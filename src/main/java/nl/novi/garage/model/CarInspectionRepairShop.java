@@ -11,13 +11,13 @@ import java.time.LocalDateTime;
 @Table(name = "cars_repair_inspection_shop")
 public class CarInspectionRepairShop {
 
+    //Attribute
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private long id;
     private LocalDateTime dateCarInspectionRepairOn;
     private LocalDateTime dateCarInspectionRepairFinish;
-
 
     @ManyToOne
 //    @JsonIgnore

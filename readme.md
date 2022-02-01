@@ -67,6 +67,18 @@ Current settings:
 * PUT /users/{username}
 * PATCH /users/{username}/password
 
+### api/v1/cars_inspection_repair
+* GET /api/v1/cars_inspection_repair
+* GET /api/v1/cars_inspection_repair/{id}
+* POST /api/v1/cars_inspection_repair
+* DELETE /api/v1/cars_inspection_repair/{id}
+
+### api/v1/cars_repair_inspection_shop
+* GET /api/v1/cars_repair_inspection_shop
+* GET /api/v1/cars_repair_inspection_shop/{id}
+* POST /api/v1/cars_repair_inspection_shop
+* DELETE /api/v1/cars_repair_inspection_shop/{id}
+
 #### A Postman export has been included in the documentation directory.
 ### Evenso are the class and the sequence diagrams.
 

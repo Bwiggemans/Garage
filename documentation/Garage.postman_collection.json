@@ -1436,10 +1436,61 @@
 				{
 					"name": "cars inspection repair",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/v1/cars_inspection_repair/1",
+							"raw": "http://localhost:8081/api/v1/cars_inspection_repair",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"cars_inspection_repair"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "car inspection repair",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/cars_inspection_repair/60",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1449,7 +1500,7 @@
 								"api",
 								"v1",
 								"cars_inspection_repair",
-								"1"
+								"60"
 							]
 						}
 					},
@@ -1458,32 +1509,25 @@
 				{
 					"name": "car inspection repair",
 					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8081/api/v1/cars_inspection_repair/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"api",
-								"v1",
-								"cars_inspection_repair",
-								"1"
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
 							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "car inspection repair",
-					"request": {
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/v1/cars_inspection_repair/1",
+							"raw": "http://localhost:8081/api/v1/cars_inspection_repair/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1493,7 +1537,52 @@
 								"api",
 								"v1",
 								"cars_inspection_repair",
-								"1"
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "car inspection repair",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inspection\": true,\r\n    \"repair\": true,\r\n    \"consentCustomer\": true,\r\n    \"repairCompleted\": true,\r\n    \"car\": {\r\n        \"id\": 60\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/cars_inspection_repair",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"cars_inspection_repair"
 							]
 						}
 					},
@@ -1507,6 +1596,21 @@
 				{
 					"name": "cars inspection repair shop",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1528,6 +1632,21 @@
 				{
 					"name": "car inspection repair shop",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -1550,10 +1669,25 @@
 				{
 					"name": "car inspection repair shop",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/v1/cars_repair_inspection_shop/1",
+							"raw": "http://localhost:8081/api/v1/cars_repair_inspection_shop/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1563,7 +1697,52 @@
 								"api",
 								"v1",
 								"cars_repair_inspection_shop",
-								"1"
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "car inspection repair shop",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateCarInspectionRepairOn\": \"2022-02-01T00:00:00\",\r\n    \"dateCarInspectionRepairFinish\": \"2022-02-01T00:00:00\",\r\n    \"carInspectionRepair\": {\r\n        \"id\": 1\r\n    },\r\n    \"sparePart\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/cars_repair_inspection_shop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"cars_repair_inspection_shop"
 							]
 						}
 					},

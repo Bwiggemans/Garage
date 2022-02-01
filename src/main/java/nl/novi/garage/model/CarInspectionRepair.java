@@ -22,7 +22,8 @@ public class CarInspectionRepair {
     private boolean consentCustomer;
     private boolean repairCompleted;
 
-    @ManyToOne
+//    @ManyToOne
+    @OneToOne
     private Car car;
 
     @OneToMany(mappedBy = "carInspectionRepair")
