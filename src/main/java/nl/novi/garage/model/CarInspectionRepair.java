@@ -30,7 +30,6 @@ public class CarInspectionRepair {
     private List<CarInspectionRepairShop> carInspectionRepairShop = new ArrayList<>();
 
     //Getters and setters
-
     public Long getId() {
         return id;
     }

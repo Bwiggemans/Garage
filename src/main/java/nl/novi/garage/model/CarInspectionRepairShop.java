@@ -30,8 +30,6 @@ public class CarInspectionRepairShop {
     private SparePart sparePart;
 
     //Getters and setters
-
-
     public long getId() {
         return id;
     }
