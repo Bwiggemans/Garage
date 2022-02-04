@@ -110,7 +110,6 @@ public class SparePartService {
             existingSparePart.setStock(sparePart.getStock());
         }
  */
-
         if (!(sparePart.getPrice()==null) && !sparePart.getPrice().describeConstable().isEmpty()){
             existingSparePart.setPrice(sparePart.getPrice());
         }
