@@ -102,12 +102,23 @@ public class SparePartService {
         if (!(sparePart.getPartNumber()==null) && !sparePart.getPartNumber().isEmpty()){
             existingSparePart.setPartNumber(existingSparePart.getPartNumber());
         }
+/*      This code does not work data will not be saved:
         if ((sparePart.getPrice()) != (existingSparePart.getPrice())){
             existingSparePart.setPrice(sparePart.getPrice());
         }
         if ((sparePart.getStock()) != (existingSparePart.getStock())){
             existingSparePart.setStock(sparePart.getStock());
         }
+ */
+
+        if (!(sparePart.getPrice()==null) && !sparePart.getPrice().describeConstable().isEmpty()){
+            existingSparePart.setPrice(sparePart.getPrice());
+        }
+
+        if (!(sparePart.getStock()==null) && !sparePart.getStock().describeConstable().isEmpty()){
+            existingSparePart.setStock(sparePart.getStock());
+        }
+
         sparePartRepository.save(existingSparePart);
     }
 

@@ -21,7 +21,7 @@ public class SparePartRequestDto {
     @Size(min =6, max = 6)
     private String partNumber;
 
-    private double price;
+    private Double price;
     private Integer stock;
 
     //Getters and setters
@@ -49,11 +49,11 @@ public class SparePartRequestDto {
         this.partNumber = partNumber;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

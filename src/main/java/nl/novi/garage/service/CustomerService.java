@@ -118,12 +118,14 @@ public class CustomerService {
         if (!(customer.getEmail()==null) && !customer.getEmail().isEmpty()){
             existingCustomer.setEmail(customer.getEmail());
         }
-        if ((customer.getAreaCode()) != (existingCustomer.getAreaCode())){
-            existingCustomer.setAreaCode(customer.getAreaCode());
-        }
-        if ((customer.getPhoneNumber()) != (existingCustomer.getPhoneNumber())){
+        if (!(customer.getPhoneNumber()==null) && !customer.getPhoneNumber().describeConstable().isEmpty()){
             existingCustomer.setPhoneNumber(customer.getPhoneNumber());
         }
+
+        if (!(customer.getAreaCode()==null) && !customer.getAreaCode().describeConstable().isEmpty()){
+            existingCustomer.setAreaCode(customer.getAreaCode());
+        }
+
         customerRepository.save(existingCustomer);
     }
 

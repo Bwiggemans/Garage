@@ -34,7 +34,7 @@ public class CarRequestDto {
 
     @Max(999999)
     @Min(1)
-    private double mileage;
+    private Double mileage;
 
     //Getters and setters
     public String getLicensePlate() {
@@ -85,11 +85,11 @@ public class CarRequestDto {
         this.year = year;
     }
 
-    public double getMileage() {
+    public Double getMileage() {
         return mileage;
     }
 
-    public void setMileage(double mileage) {
+    public void setMileage(Double mileage) {
         this.mileage = mileage;
     }
 

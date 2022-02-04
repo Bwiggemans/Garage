@@ -19,7 +19,7 @@ public class Car {
     private String licensePlate;
     private String transmission;
     private Integer year;
-    private double mileage;
+    private Double mileage;
 
     @JsonIgnoreProperties("cars")
     @ManyToOne
@@ -30,7 +30,7 @@ public class Car {
     public Car() {
     }
 
-    public Car(String brand, String model, String fuel, String licensePlate, String transmission, Integer year, double mileage, Customer owner) {
+    public Car(String brand, String model, String fuel, String licensePlate, String transmission, Integer year, Double mileage, Customer owner) {
         this.brand = brand;
         this.model = model;
         this.fuel = fuel;
@@ -42,7 +42,7 @@ public class Car {
     }
 
     //constructor
-    public Car(int id, String brand, String model, String fuel, String licensePlate, String transmission, Integer year, double mileage, Customer owner) {
+    public Car(int id, String brand, String model, String fuel, String licensePlate, String transmission, Integer year, Double mileage, Customer owner) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -111,11 +111,11 @@ public class Car {
         this.year = year;
     }
 
-    public double getMileage() {
+    public Double getMileage() {
         return mileage;
     }
 
-    public void setMileage(double mileage) {
+    public void setMileage(Double mileage) {
         this.mileage = mileage;
     }
 

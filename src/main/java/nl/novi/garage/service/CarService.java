@@ -114,12 +114,22 @@ public class CarService {
         if (!(car.getLicensePlate()==null) && !car.getLicensePlate().isEmpty()){
             existingCar.setLicensePlate(car.getLicensePlate());
         }
+/*      This code does not work data will not be saved:
         if ((car.getYear()) != (existingCar.getYear())){
             existingCar.setYear(car.getYear());
         }
         if ((car.getMileage()) != (existingCar.getMileage())){
             existingCar.setMileage(car.getMileage());
         }
+ */
+        if (!(car.getYear()==null) && !car.getYear().describeConstable().isEmpty()){
+            existingCar.setYear(car.getYear());
+        }
+
+        if (!(car.getMileage()==null) && !car.getMileage().describeConstable().isEmpty()){
+            existingCar.setMileage(car.getMileage());
+        }
+
         carRepository.save(existingCar);
     }
 

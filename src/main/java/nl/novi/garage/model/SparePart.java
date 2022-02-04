@@ -16,14 +16,14 @@ public class SparePart {
     private String brand;
     private String part;
     private String partNumber;
-    private double price;
+    private Double price;
     private Integer stock;
 
     //Constructor
     public SparePart() {
     }
 
-    public SparePart(String brand, String part, String partNumber, double price, Integer stock) {
+    public SparePart(String brand, String part, String partNumber, Double price, Integer stock) {
         this.brand = brand;
         this.part = part;
         this.partNumber = partNumber;
@@ -32,7 +32,7 @@ public class SparePart {
     }
 
     //Constructor
-    public SparePart(int id, String brand, String part, String partNumber, double price, Integer stock) {
+    public SparePart(int id, String brand, String part, String partNumber, Double price, Integer stock) {
         this.id = id;
         this.brand = brand;
         this.part = part;
@@ -74,11 +74,11 @@ public class SparePart {
         this.partNumber = partNumber;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
