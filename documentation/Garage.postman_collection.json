@@ -63,7 +63,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/carmodels/1",
+							"raw": "http://localhost:8081/carmodels/0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -71,7 +71,7 @@
 							"port": "8081",
 							"path": [
 								"carmodels",
-								"1"
+								"0"
 							]
 						}
 					},
@@ -215,7 +215,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/cars/60",
+							"raw": "http://localhost:8081/cars/61",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -223,7 +223,7 @@
 							"port": "8081",
 							"path": [
 								"cars",
-								"60"
+								"61"
 							]
 						}
 					},
@@ -290,7 +290,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/cars/60",
+							"raw": "http://localhost:8081/cars/48",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -298,7 +298,7 @@
 							"port": "8081",
 							"path": [
 								"cars",
-								"60"
+								"48"
 							]
 						}
 					},
@@ -369,7 +369,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"brand\": \"Kia\",\r\n        \"model\": \"Forte\",\r\n        \"fuel\": \"petrol\",\r\n        \"licensePlate\": \"JC-012-T\",\r\n        \"transmission\": \"Automaticscddasd\",\r\n        \"year\": 20456465,\r\n        \"mileage\": 75.7\r\n}",
+							"raw": "{\r\n        \"brand\": \"Kia\",\r\n        \"model\": \"Forte\",\r\n        \"fuel\": \"petrol\",\r\n        \"licensePlate\": \"JC-012-T\",\r\n        \"transmission\": \"Automatic\",\r\n        \"year\": 2021,\r\n        \"mileage\": 375.7\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -413,7 +413,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"year\": 2,\r\n        \"mileage\": 7546.7\r\n}",
+							"raw": "{\r\n    \"mileage\": 754654.7\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -421,7 +421,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/cars/2",
+							"raw": "http://localhost:8081/cars/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -429,7 +429,7 @@
 							"port": "8081",
 							"path": [
 								"cars",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -495,7 +495,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/customers/49",
+							"raw": "http://localhost:8081/customers/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -503,7 +503,7 @@
 							"port": "8081",
 							"path": [
 								"customers",
-								"49"
+								"1"
 							]
 						}
 					},
@@ -649,7 +649,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "    {\r\n        \"name\": \"Klinkenbergdcsdsd\",\r\n        \"adress\": \"Amsterdamstraat 21\",\r\n        \"residence\": \"Heerlen\",\r\n        \"postalCode\": \"1245AB\",\r\n        \"email\": \"klinkenberg@gmail.com\",\r\n        \"areaCode\": 45,\r\n        \"phoneNumber\": 5318095\r\n}\r\n",
+							"raw": "    {\r\n        \"name\": \"Klinkenbergdcsdsd\",\r\n        \"adress\": \"Amsterdamstraat 21\",\r\n        \"residence\": \"Heerlen\",\r\n        \"postalCode\": \"1245AB\",\r\n        \"email\": \"klinkenberggerge@gmail.com\",\r\n        \"areaCode\": 45,\r\n        \"phoneNumber\": 5318095\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -693,7 +693,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "    {\r\n        \"areaCode\": 45,\r\n        \"phoneNumber\": 555555\r\n}\r\n",
+							"raw": "{\r\n    \"phoneNumber\": 5312111\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -929,7 +929,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": " {\r\n    \"brand\": \"Hanno\",\r\n    \"part\": \"Oliefilter\",\r\n    \"partNumber\": \"977521\",\r\n    \"price\": 109.9,\r\n    \"stock\": 45\r\n}\r\n",
+							"raw": " {\r\n    \"brand\": \"Hanno\",\r\n    \"part\": \"Oliefilter\",\r\n    \"partNumber\": \"977521\",\r\n    \"price\": 109.9,\r\n    \"stock\": 21\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -937,7 +937,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/spareparts/2",
+							"raw": "http://localhost:8081/spareparts/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -945,7 +945,7 @@
 							"port": "8081",
 							"path": [
 								"spareparts",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -973,7 +973,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": " {\r\n    \"price\": 9545.9,\r\n    \"stock\": 8785\r\n}\r\n",
+							"raw": " {\r\n    \"stock\": 9999\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -981,7 +981,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/spareparts/2",
+							"raw": "http://localhost:8081/spareparts/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -989,7 +989,7 @@
 							"port": "8081",
 							"path": [
 								"spareparts",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -1022,7 +1022,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "    {\r\n    \"brand\": \"Kia\",\r\n    \"model\": \"K7\",\r\n    \"fuel\": \"Petrol\",\r\n    \"licensePlate\": \"M-214-PB\",\r\n    \"transmission\": \"Automatic\",\r\n    \"year\": 2022,\r\n    \"mileage\": 8.8\r\n}\r\n",
+							"raw": "{\r\n    \"id\": 61,\r\n    \"brand\": \"KIA\",\r\n    \"model\": \"Sorento\",\r\n    \"fuel\": \"LPG\",\r\n    \"licensePlate\": \"JV-851-H\",\r\n    \"transmission\": \"Automatic\",\r\n    \"year\": 1944,\r\n    \"mileage\": 7500.8\r\n\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1030,7 +1030,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/customers/49/cars",
+							"raw": "http://localhost:8081/customers/1/cars",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1038,7 +1038,7 @@
 							"port": "8081",
 							"path": [
 								"customers",
-								"49",
+								"1",
 								"cars"
 							]
 						}
@@ -1095,16 +1095,11 @@
 					"name": "users",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "bearer",
+							"bearer": [
 								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "password",
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY0NTQ1MDMxNCwiaWF0IjoxNjQzOTc5MDg1fQ.Q79U9QupMYWmeBIANZX-vCrzRIC55xvHFM8Asd2v8ms",
 									"type": "string"
 								}
 							]
@@ -1294,7 +1289,7 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "Password#54",
+									"value": "password",
 									"type": "string"
 								},
 								{
@@ -1308,7 +1303,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "password",
+							"raw": "Password#55",
 							"options": {
 								"raw": {
 									"language": "text"
@@ -1343,13 +1338,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "username",
-									"value": "admin",
+									"key": "password",
+									"value": "password",
 									"type": "string"
 								},
 								{
-									"key": "password",
-									"value": "password",
+									"key": "username",
+									"value": "admin",
 									"type": "string"
 								}
 							]
@@ -1410,7 +1405,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/bwigg/IdeaProjects/Backend 2021-08/SD-BE-SB-Demo-Application/documentation/Class Diagram Library.png"
+									"src": "/C:/Novi opleiding/Backend Programming/Eindopdracht Backend Programmeren/deel_1_1_1998_tot_2004.jpg"
 								}
 							]
 						},
@@ -1490,7 +1485,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/v1/cars_inspection_repair/60",
+							"raw": "http://localhost:8081/api/v1/cars_inspection_repair/61",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1500,7 +1495,7 @@
 								"api",
 								"v1",
 								"cars_inspection_repair",
-								"60"
+								"61"
 							]
 						}
 					},
@@ -1527,7 +1522,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/v1/cars_inspection_repair/2",
+							"raw": "http://localhost:8081/api/v1/cars_inspection_repair/61",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1537,7 +1532,7 @@
 								"api",
 								"v1",
 								"cars_inspection_repair",
-								"2"
+								"61"
 							]
 						}
 					},
@@ -1565,7 +1560,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"inspection\": true,\r\n    \"repair\": true,\r\n    \"consentCustomer\": true,\r\n    \"repairCompleted\": true,\r\n    \"car\": {\r\n        \"id\": 60\r\n    }\r\n}",
+							"raw": "{\r\n    \"inspection\": true,\r\n    \"repair\": true,\r\n    \"consentCustomer\": true,\r\n    \"repairCompleted\": true,\r\n    \"car\": {\r\n        \"id\": 61\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1650,7 +1645,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/v1/cars_repair_inspection_shop/2",
+							"raw": "http://localhost:8081/api/v1/cars_repair_inspection_shop/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1660,7 +1655,7 @@
 								"api",
 								"v1",
 								"cars_repair_inspection_shop",
-								"2"
+								"3"
 							]
 						}
 					},
@@ -1687,7 +1682,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/v1/cars_repair_inspection_shop/2",
+							"raw": "http://localhost:8081/api/v1/cars_repair_inspection_shop/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1697,7 +1692,7 @@
 								"api",
 								"v1",
 								"cars_repair_inspection_shop",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -1725,7 +1720,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"dateCarInspectionRepairOn\": \"2022-02-01T00:00:00\",\r\n    \"dateCarInspectionRepairFinish\": \"2022-02-01T00:00:00\",\r\n    \"carInspectionRepair\": {\r\n        \"id\": 1\r\n    },\r\n    \"sparePart\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"raw": "{\r\n    \"dateCarInspectionRepairOn\": \"2022-02-04T00:00:00\",\r\n    \"dateCarInspectionRepairFinish\": \"2022-02-04T00:00:00\",\r\n    \"carInspectionRepair\": {\r\n        \"id\": 1\r\n    },\r\n    \"sparePart\": {\r\n        \"id\": 6\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
