@@ -239,7 +239,7 @@ values
     (56, false, false, false, false),
     (57, false, false, false, false),
     (58, false, false, false, false),
-    (58, false, false, false, false),
+    (59, false, false, false, false),
     (60, false, false, false, false);
 
 
