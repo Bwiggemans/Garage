@@ -81,4 +81,5 @@ Current settings:
 
 #### A Postman export has been included in the documentation directory.
 ### Evenso are the class and the sequence diagrams.
+### An example registration certificate has been uploaded to the directory uploads via Postman.
 
